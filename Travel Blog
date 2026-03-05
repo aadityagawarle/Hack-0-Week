@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Travel Blog</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f7f7f7;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Navigation Bar */
+    header {
+      background: #1e3a8a;
+      color: white;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #facc15;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center/cover;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      background: rgba(0,0,0,0.5);
+      padding: 10px 20px;
+      border-radius: 8px;
+    }
+
+    /* Blog Section */
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 20px auto;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .blog-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    .blog-card:hover {
+      transform: scale(1.02);
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .blog-card .content {
+      padding: 15px;
+    }
+
+    .blog-card h3 {
+      margin-bottom: 10px;
+      color: #1e3a8a;
+    }
+
+    /* About & Contact */
+    section {
+      padding: 20px 0;
+    }
+
+    footer {
+      background: #1e3a8a;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <nav>
+      <div class="logo">✈️ My Travel Blog</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#blogs">Blogs</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <h1>Explore the World with Me 🌍</h1>
+  </section>
+
+  <!-- Blog Posts -->
+  <section id="blogs" class="container">
+    <h2>Latest Travel Blogs</h2>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Beach" />
+        <div class="content">
+          <h3>Trip to Goa</h3>
+          <p>Goa is famous for beaches, nightlife, and Portuguese heritage. A perfect place for relaxation.</p>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="Mountains" />
+        <div class="content">
+          <h3>Himalayan Adventure</h3>
+          <p>Trekking in the Himalayas is an unforgettable experience with beautiful landscapes and fresh air.</p>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d" alt="City" />
+        <div class="content">
+          <h3>Exploring Paris</h3>
+          <p>Paris is the city of love, art, and fashion. The Eiffel Tower is a must-visit attraction.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="container">
+    <h2>About Me</h2>
+    <p>Hi! I am a travel lover and blogger. I share my travel experiences, tips, and photos to inspire others to explore the world.</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="container">
+    <h2>Contact Me</h2>
+    <p>Email: mytravelblog@example.com</p>
+    <p>Instagram: @mytravelblog</p>
+  </section>
+
+  <footer>
+    <p>© 2026 My Travel Blog | Designed by Aaditya</p>
+  </footer>
+
+</body>
+</html>
