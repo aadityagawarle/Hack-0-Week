@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Urban Bistro Menu</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:"Segoe UI",sans-serif;
+  background:#0f0f0f;
+  color:#f7f7f7;
+}
+
+/* HEADER */
+header{
+  background:#151515;
+  padding:20px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.logo{
+  font-size:1.6rem;
+  font-weight:bold;
+  color:#ffb347;
+}
+
+nav a{
+  color:#ddd;
+  margin-left:20px;
+  text-decoration:none;
+}
+nav a:hover{
+  color:#ffb347;
+}
+
+/* HERO */
+.hero{
+  background:url("https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1600&q=80")
+  center/cover no-repeat;
+  padding:110px 20px;
+  text-align:center;
+  position:relative;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.75);
+}
+.hero-content{
+  position:relative;
+  max-width:700px;
+  margin:auto;
+}
+.hero h1{
+  font-size:3rem;
+  letter-spacing:3px;
+}
+.hero p{
+  color:#ccc;
+  margin-top:10px;
+}
+
+/* CATEGORY SLIDER */
+.category-slider{
+  text-align:center;
+  margin:60px auto;
+}
+.category-slider h2{
+  color:#ffb347;
+  letter-spacing:2px;
+  margin-bottom:25px;
+}
+.slider{
+  display:flex;
+  gap:25px;
+  overflow-x:auto;
+  padding:10px 20px;
+}
+.slider::-webkit-scrollbar{
+  display:none;
+}
+.category-card{
+  min-width:180px;
+  background:#1a1a1a;
+  border-radius:50%;
+  padding:15px;
+  cursor:pointer;
+  transition:transform .3s;
+}
+.category-card:hover{
+  transform:scale(1.08);
+}
+.category-card img{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  object-fit:cover;
+}
+.category-card p{
+  margin-top:10px;
+  font-size:.9rem;
+}
+
+/* MENU SECTIONS */
+main{
+  max-width:1200px;
+  margin:auto;
+  padding:40px 20px 80px;
+}
+
+.menu-section{
+  margin-bottom:60px;
+}
+.menu-section h2{
+  color:#ffb347;
+  margin-bottom:10px;
+  border-bottom:2px solid #333;
+  display:inline-block;
+}
+.section-subtitle{
+  color:#aaa;
+  margin-bottom:30px;
+}
+
+.menu-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+
+.menu-item{
+  background:#181818;
+  border-radius:12px;
+  overflow:hidden;
+  transition:transform .3s;
+}
+.menu-item:hover{
+  transform:translateY(-6px);
+}
+.menu-item img{
+  width:100%;
+  height:190px;
+  object-fit:cover;
+}
+.menu-content{
+  padding:15px;
+}
+.menu-header{
+  display:flex;
+  justify-content:space-between;
+}
+.menu-price{
+  color:#ffb347;
+}
+.menu-tag{
+  font-size:.75rem;
+  color:#999;
+  margin:6px 0;
+}
+.menu-desc{
+  font-size:.9rem;
+  color:#ccc;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  border-top:1px solid #222;
+  color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Urban Bistro</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Menu</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Our Menu</h1>
+    <p>Fresh ingredients, bold flavors & handcrafted dishes</p>
+  </div>
+</section>
+
+<!-- CATEGORY SLIDER -->
+<section class="category-slider">
+  <h2>Explore Menu</h2>
+  <div class="slider">
+    <div class="category-card">
+      <img src="https://t4.ftcdn.net/jpg/16/62/04/77/360_F_1662047782_kbUSL9TSKpfLjNJDD6kDl9zgEEedHByH.jpg">
+      <p>Starters</p>
+    </div>
+    <div class="category-card">
+      <img src="https://images.moneycontrol.com/static-mcnews/2023/10/pexels-anil-sharma-10580198-770x433.jpg?impolicy=website&width=770&height=431">
+      <p>Main Course</p>
+    </div>
+    <div class="category-card">
+      <img src="https://iheartumami.com/wp-content/uploads/2018/08/Watermelon-peach-mocktail-recipe.jpg">
+      <p>Drinks</p>
+    </div>
+    <div class="category-card">
+      <img src="https://www.tasteofhome.com/wp-content/uploads/2017/09/exps21585_THCA153054D10_15_4b.jpg">
+      <p>Desserts</p>
+    </div>
+  </div>
+</section>
+
+<main>
+
+<!-- STARTERS -->
+<section class="menu-section">
+  <h2>Starters</h2>
+  <p class="section-subtitle">Perfect beginning</p>
+  <div class="menu-grid">
+    <div class="menu-item">
+      <img src="https://rakskitchen.net/wp-content/uploads/2022/07/honey-chilli.jpg">
+      <div class="menu-content">
+        <div class="menu-header">
+          <strong>Chilli Honey Potato</strong>
+          <span class="menu-price">₹260</span>
+        </div>
+        <div class="menu-tag">Chef's Special</div>
+        <p class="menu-desc">Golden fried potatoes with chilli and honey.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://beginwithbalance.com/wp-content/uploads/2024/02/Shrimp-Rice-Paper-Rolls-1.jpg">
+      <div class="menu-content">
+        <div class="menu-header">
+          <strong>Rice Paper Spring Roll</strong>
+          <span class="menu-price">₹280</span>
+        </div>
+        <div class="menu-tag">Chef's Special</div>
+        <p class="menu-desc">Made with rice paper stuffed with veggies and herbs.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://www.giallozafferano.com/images/277-27771/Caprese-Bruschetta_1200x800.jpg">
+      <div class="menu-content">
+        <div class="menu-header">
+          <strong>Bruschetta</strong>
+          <span class="menu-price">₹220</span>
+        </div>
+        <div class="menu-tag">Chef's Special</div>
+        <p class="menu-desc">Toasted bread topped with tomatoes, basil, garlic & olive oil.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://static.wixstatic.com/media/d360eb_fde239e920994c36a15ad7cad91722f0~mv2.jpg/v1/fill/w_1606,h_1606,al_c,q_90/IMG_3687-Editar_edited.jpg">
+      <div class="menu-content">
+        <div class="menu-header">
+          <strong>Sushi</strong>
+          <span class="menu-price">₹340</span>
+        </div>
+        <div class="menu-tag">Chef's Special</div>
+        <p class="menu-desc">Vinegared rice with fresh seafood or vegetables.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://eatlittlebird.com/wp-content/uploads/2022/09/korean-fried-chicken-bao-buns-5.jpg">
+      <div class="menu-content">
+        <div class="menu-header">
+          <strong>Bao Buns</strong>
+          <span class="menu-price">₹360</span>
+        </div>
+        <div class="menu-tag">Chef's Special</div>
+        <p class="menu-desc">Soft steamed buns filled with savory ingredients.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://veggieanh.com/wp-content/uploads/2024/04/5541BE44-B353-49FC-BC2C-0D7FD985C819.jpg">
+      <div class="menu-content">
+        <div class="menu-header">
+          <strong>Dumplings</strong>
+          <span class="menu-price">₹260</span>
+        </div>
+        <div class="menu-tag">Chef's Special</div>
+        <p class="menu-desc">Dough pockets filled with vegetables, steamed or fried.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN COURSE -->
+<section class="menu-section">
+  <h2>Main Course</h2>
+  <p class="section-subtitle">Signature dishes</p>
+  <div class="menu-grid">
+    <div class="menu-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2CoZKn5I6mH64w699bSykb2n-eXz9CPUmUQ&s">
+      <div class="menu-content">
+        <div class="menu-header">
+          <strong>Butter Chicken with Naan</strong>
+          <span class="menu-price">₹360</span>
+        </div>
+        <div class="menu-tag">Signature</div>
+        <p class="menu-desc">Creamy tomato gravy with tender chicken and butter naan.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://static.toiimg.com/thumb/54308405.cms?imgsize=510571&width=800&height=800">
+      <div class="menu-content">
+        <div class="menu-header">
+          <strong>Biryani</strong>
+          <span class="menu-price">₹400</span>
+        </div>
+        <div class="menu-tag">Dum Cooked</div>
+        <p class="menu-desc">Aromatic basmati rice with spices and vegetables.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://www.jocooks.com/wp-content/uploads/2019/06/creamy-carbonara-1-2.jpg">
+      <div class="menu-content">
+        <div class="menu-header">
+          <strong>Spaghetti Carbonara</strong>
+          <span class="menu-price">₹360</span>
+        </div>
+        <p class="menu-desc">Pasta with eggs, cheese, pancetta and black pepper.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://rachaelsgoodeats.com/wp-content/uploads/2023/06/tri-tip-steak-potatoes-27-1025x1536.jpg">
+      <div class="menu-content">
+        <div class="menu-header">
+          <strong>Steak with Mashed Potatoes</strong>
+          <span class="menu-price">₹450</span>
+        </div>
+        <p class="menu-desc">Grilled steak with creamy mashed potatoes and veggies.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://www.196flavors.com/wp-content/uploads/2016/01/moussaka-4-FP.jpg">
+      <div class="menu-content">
+        <div class="menu-header">
+          <strong>Moussaka</strong>
+          <span class="menu-price">₹400</span>
+        </div>
+        <p class="menu-desc">Baked layered eggplant, minced meat and bechamel sauce.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://kristineskitchenblog.com/wp-content/uploads/2022/07/vegetable-lasagna-recipe-18.jpg">
+      <div class="menu-content">
+        <div class="menu-header">
+          <strong>Veggie Lasagna</strong>
+          <span class="menu-price">₹400</span>
+        </div>
+        <p class="menu-desc">Layers of pasta, cheese, and vegetables in tomato sauce.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://delishglobe.com/wp-content/uploads/2024/09/Ratatouille-1.png">
+      <div class="menu-content">
+        <div class="menu-header">
+          <strong>Ratatouille</strong>
+          <span class="menu-price">₹450</span>
+        </div>
+        <p class="menu-desc">Stewed seasonal vegetables with herbs and olive oil.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://louisianacookin.com/wp-content/uploads/2023/09/web-duckrisotto_1032.jpg">
+      <div class="menu-content">
+        <div class="menu-header">
+          <strong>Mushroom Risotto</strong>
+          <span class="menu-price">₹300</span>
+        </div>
+        <p class="menu-desc">Creamy Arborio rice cooked with mushrooms and parmesan.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://dellugo.co.uk/cdn/shop/articles/20240312101539-ricotta-20and-20spinach-20cannelloni-20on-20white-20website_2000x.jpg?v=1710238970">
+      <div class="menu-content">
+        <div class="menu-header">
+          <strong>Spinach Ricotta Cannelloni</strong>
+          <span class="menu-price">₹400</span>
+        </div>
+        <p class="menu-desc">Pasta tubes stuffed with spinach, ricotta and baked in sauce.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DRINKS -->
+<section class="menu-section">
+  <h2>Drinks</h2>
+  <p class="section-subtitle">Sip, relax and refresh</p>
+  <div class="menu-grid">
+    <div class="menu-item">
+      <img src="https://www.acouplecooks.com/wp-content/uploads/2021/04/Raspberry-Mojito-002.jpg">
+      <div class="menu-content">
+        <div class="menu-header">
+          <strong>Raspberry Mojito</strong>
+          <span class="menu-price">₹280</span>
+        </div>
+        <p class="menu-desc">Refreshing mint, lime and raspberry mocktail.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv44_gL_GJIWm0UT3t0OHCB1RD5wZX6oT_6Q&s">
+      <div class="menu-content">
+        <div class="menu-header">
+          <strong>Margarita</strong>
+          <span class="menu-price">₹300</span>
+        </div>
+        <p class="menu-desc">Classic lime margarita with salt rim.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://www.artofdrink.com/wp-content/uploads/2010/08/blue-lagoon-cocktail-720x720.jpg">
+      <div class="menu-content">
+        <div class="menu-header">
+          <strong>Blue Lagoon Mocktail</strong>
+          <span class="menu-price">₹380</span>
+        </div>
+        <p class="menu-desc">Vibrant blue curacao mocktail with lemonade.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAez2swZmDB2cVfIMckQU_N7vaZ327mBYJ2w&s">
+      <div class="menu-content">
+        <div class="menu-header">
+          <strong>Shirley Temple</strong>
+          <span class="menu-price">₹350</span>
+        </div>
+        <p class="menu-desc">Ginger ale with grenadine and cherries.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://makemineamocktail.com/wp-content/uploads/2020/02/virgin-mary-mocktail-5.jpg">
+      <div class="menu-content">
+        <div class="menu-header">
+          <strong>Virgin Mary</strong>
+          <span class="menu-price">₹300</span>
+        </div>
+        <p class="menu-desc">Spicy tomato juice with lemon and spices.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://foodtasia.com/wp-content/uploads/2021/08/peach-tea-11.jpg">
+      <div class="menu-content">
+        <div class="menu-header">
+          <strong>Peach Iced Tea</strong>
+          <span class="menu-price">₹280</span>
+        </div>
+        <p class="menu-desc">Sweet peach tea served chilled with ice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESSERTS -->
+<section class="menu-section">
+  <h2>Desserts</h2>
+  <p class="section-subtitle">Sweet endings</p>
+  <div class="menu-grid">
+    <div class="menu-item">
+      <img src="https://baranbakery.com/wp-content/uploads/2024/05/Tiramisu-5-1-7.jpg">
+      <div class="menu-content">
+        <div class="menu-header">
+          <strong>Tiramisu</strong>
+          <span class="menu-price">₹280</span>
+        </div>
+        <p class="menu-desc">Coffee soaked ladyfingers with mascarpone cream.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfVC_d5x-eabRAD96zTIP1zTiM4ttL_G2eRg&s">
+      <div class="menu-content">
+        <div class="menu-header">
+          <strong>Blueberry Cheesecake</strong>
+          <span class="menu-price">₹250</span>
+        </div>
+        <p class="menu-desc">Creamy cheesecake topped with blueberry compote.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://cleobuttera.com/wp-content/uploads/2018/03/lifted-baklava.jpg">
+      <div class="menu-content">
+        <div class="menu-header">
+          <strong>Baklava</strong>
+          <span class="menu-price">₹220</span>
+        </div>
+        <p class="menu-desc">Layered pastry with nuts and honey syrup.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQKRN8_L8bzbrsJNA3ksQpgMMD8ynTG6aUnQ&s">
+      <div class="menu-content">
+        <div class="menu-header">
+          <strong>Rasmalai</strong>
+          <span class="menu-price">₹220</span>
+        </div>
+        <p class="menu-desc">Soft cheese balls in thickened sweetened milk.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480_1_5x/img/recipe/ras/Assets/00650E92-9320-4EB9-9EBE-A7CAAE0A6698/Derivates/0520C594-F142-49ED-8BBD-F29450DBCC16.jpg">
+      <div class="menu-content">
+        <div class="menu-header">
+          <strong>Pavlova</strong>
+          <span class="menu-price">₹220</span>
+        </div>
+        <p class="menu-desc">Meringue base topped with whipped cream and fruits.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://almondhouse.com/cdn/shop/files/1_IMG_9491_1e1968b7-b144-49ba-a4ed-2659e95a3bcb.jpg">
+      <div class="menu-content">
+        <div class="menu-header">
+          <strong>Gulab Jamun</strong>
+          <span class="menu-price">₹220</span>
+        </div>
+        <p class="menu-desc">Deep-fried milk dough balls in rose syrup.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://www.recipetineats.com/tachyon/2016/08/Churros_9.jpg?resize=900%2C1260&zoom=0.72">
+      <div class="menu-content">
+        <div class="menu-header">
+          <strong>Churros</strong>
+          <span class="menu-price">₹220</span>
+        </div>
+        <p class="menu-desc">Crispy fried dough with cinnamon sugar and dip.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+© 2026 Urban Bistro · Nagpur[file:2]
+</footer>
+
+</body>
+</html>
